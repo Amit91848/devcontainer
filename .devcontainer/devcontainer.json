@@ -1,0 +1,21 @@
+{
+  "name": "Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node",
+  "postCreateCommand": "git clone https://github.com/calcom/cal.com && cd ./cal.com/apps/ && git clone https://github.com/calcom/website",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Prisma.prisma",
+        "vscodevim.vim",
+        "rangav.vscode-thunder-client",
+        "bradlc.vscode-tailwindcss",
+        "wix.vscode-import-cost",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "forwardPorts": [
+    3000,
+    5432
+  ]
+}
