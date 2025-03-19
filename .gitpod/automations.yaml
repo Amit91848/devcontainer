@@ -1,0 +1,20 @@
+tasks:
+  # sudo sed -i -e "s|^NEXTAUTH_SECRET=.*|NEXTAUTH_SECRET=$next_auth_secret|" \
+  #       -e "s|^CALENDSO_ENCRYPTION_KEY=.*|CALENDSO_ENCRYPTION_KEY=$calendso_encryption_key|" \ /workspaces/devcontainer/cal.com/.env &&
+  webappSetup:
+    name: Webapp Setup
+    command: |
+      cd cal.com && 
+      cp .env.example .env &&
+      next_auth_secret=$(openssl rand -base64 32) &&
+      calendso_encryption_key=$(openssl rand -base64 24) &&
+      yarn dx
+    triggeredBy:
+      - manual
+      - postEnvironmentStart
+  websiteSetup:
+    name: Website Setup
+    command: |
+      cd ./cal.com/apps/website && yarn
+    triggeredBy:
+      - manual
