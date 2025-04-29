@@ -1,7 +1,7 @@
 {
   "name": "Dev Container",
   "image": "mcr.microsoft.com/devcontainers/javascript-node",
-  "postCreateCommand": "git clone https://github.com/calcom/cal.com && git clone https://github.com/calcom/growth && https://github.com/calcom/sales && cd ./cal.com/apps/ && git clone https://github.com/calcom/website",
+  "postCreateCommand": "git clone https://github.com/calcom/cal.com && git clone https://github.com/calcom/private-api && git clone https://github.com/calcom/growth && https://github.com/calcom/sales && cd ./cal.com/apps/ && git clone https://github.com/calcom/website",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
